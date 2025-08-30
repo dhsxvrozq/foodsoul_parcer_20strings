@@ -15,4 +15,4 @@ for (const product of products) {
 
 // Запись результата
 fs.writeFileSync('products.json', JSON.stringify(result, null, 2), 'utf8');
-console.log('Готово!');
+console.log('Список сохранен в products.json');
