@@ -25,7 +25,7 @@ async function parce_json(state_json) {
         };
     });
     const menuJsonString = JSON.stringify(menu, null, 2);
-    fs.writeFileSync('menu.json', menuJsonString, 'utf-8');
+    // fs.writeFileSync('menu.json', menuJsonString, 'utf-8');
     return menuJsonString;
 };
 
@@ -33,6 +33,8 @@ async function run() {
     html = await get_html("https://djari.ru/");
     state_json = await get_state_json(html);
     menu = await parce_json(state_json);
+    fs.writeFileSync('menu.json', menu, 'utf-8');
+
 }
 
 run();
