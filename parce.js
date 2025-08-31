@@ -13,7 +13,6 @@ async function get_state_json(html) {
     const jsonObj = JSON.parse(state_json_string);
     const prettyJson = JSON.stringify(jsonObj, null, 2);
     // fs.writeFileSync('state.json', prettyJson, 'utf-8');
-
     return jsonObj;
 };
 
@@ -34,7 +33,6 @@ async function run() {
     state_json = await get_state_json(html);
     menu = await parce_json(state_json);
     fs.writeFileSync('menu.json', menu, 'utf-8');
-
 }
 
 run();
